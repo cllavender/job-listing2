@@ -47,15 +47,15 @@ class Admin::JobsController < ApplicationController
 
   def hide
     @job = Job.find(params[:id])
-    @job.is_hidden = true
-    @job.save
+    @job.job_hide!
+
     redirect_to :back
   end
 
   def publish
     @job = Job.find(params[:id])
-    @job.is_hidden = false
-    @job.save
+    @job.job_publish!
+
     redirect_to :back
   end
 
