@@ -2,5 +2,12 @@
 
 <p>
   <%= simple_format(@job.description) %>
+    <h3>薪资下限： <%= @job.wage_lower_bound %></h3>
+    <h3>薪资上限： <%= @job.wage_upper_bound %></h3>
+    <h3><%= @job.contact_email %></h3>
+    <!--<h3><%= @job.is_hidden %></h3>
+    <h3> @job.is_hidden </h3> -->
 
 </p>
+
+<%= link_to("提交简历", new_job_resume_path(@job), :class => "btn btn-primary" )%>
