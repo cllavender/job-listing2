@@ -36,12 +36,14 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
-gem 'awesome_print'
 
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'font-awesome-rails'
+
+gem "awesome_print", require:"ap"
+
 
 
 group :development, :test do
