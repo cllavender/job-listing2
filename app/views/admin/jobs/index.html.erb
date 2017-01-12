@@ -1,33 +1,36 @@
 <div class="pull-right">
-  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default" ) %>
+  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-primary" ) %>
 </div>
-<table class="table table-boldered">
+<br>
+<br>
+
+<table class="table table-boldered table-hover ">
   <thead>
         <tr>
-            <td>
+            <td class="danger">
                 职缺
             </td>
 
-            <td>
+            <td class="warning">
               收到履历数量
             </td>
-            <td>
+            <td class="info">
                 薪资下限
             </td>
-            <td>
+            <td class="info">
                 薪资上限
             </td>
-            <td>
+            <td  class="warning">
                 管理选项
             </td>
-            <td>
+            <td  class="danger">
                 刊登时间
             </td>
         </tr>
     </thead>
   <% @jobs.each do |job| %>
   <tr>
-    <td>
+    <td  >
       <%= render_job_status(job) %>
       <%= link_to(job.title,  admin_job_path(job)) %>
     </td>
@@ -46,9 +49,9 @@
      <% if job.is_hidden %>
         <%= link_to("Public", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default") %>
     <% else %>
-        <%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default" )%>
+        <%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-info" )%>
     <% end %>
-   </td>
+  </td>
     <td>
       <%= job.created_at %>
     </td>
