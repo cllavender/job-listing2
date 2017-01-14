@@ -2,6 +2,15 @@
   <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
 </div>
 <table class="table table-boldered">
+  <thead>
+    <tr>
+      <td>职缺</td>
+      <td>薪资下限</td>
+      <td>薪资上限</td>
+      <td>刊登时间</td>
+    </tr>
+  </thead>
+  <tbody>
   <% @jobs.each do |job| %>
   <tr>
     <td>
@@ -16,4 +25,5 @@
     </td>
   </tr>
   <% end %>
+</tbody>
 </table>
