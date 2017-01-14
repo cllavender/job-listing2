@@ -1,5 +1,5 @@
 #source 'https://rubygems.org'
-source 'https://gem.ruby-china.org'
+source 'https://gems.ruby-china.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -40,6 +40,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'font-awesome-rails'
+gem 'carrierwave'
 
 
 group :development, :test do
