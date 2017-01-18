@@ -1,40 +1,191 @@
-<div class="jumbotron">
-    <h1 class="title">18K Offer</h1>
-    <p class="slogan">18K Offer 是一个提供18K薪水工作机会的求职网站。
-    <br>
-    我们希望藉由这个网站，能让大家找到且应征上高薪且优质的工作。
-    <br>
-     凭借自己的努力和天份也会变 Winner
-    </p>
-    <p class="lead"><a class="btn btn-lg btn-danger" href="/jobs">马上应征</a></p>
-  </div>
-  <section id="company">
-  <div class = "container-fluid">
-    <div class="row">
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://y.photo.qq.com/img?s=VfqbvmFVI&l=y.jpg" alt="search" class = "img-thhumbnail">
-          <div class="caption">
-            <h3>北京朝阳建外SOHO</h3>
-          </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>奇妙工作网</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/full-slider.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+  <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper For Slides -->
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Third Slide -->
+                <div class="item active">
+
+                    <!-- Slide Background -->
+                    <img src="/images/first.jpg" alt="奇妙工作网"  class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+
+                    <div class="container">
+                        <div class="row">
+                            <!-- Slide Text Layer -->
+                            <div class="slide-text slide_style_left">
+                                <h1 data-animation="animated zoomInRight">奇妙工作网</h1>
+                                <p data-animation="animated fadeInLeft">在这里，所有不想做的事情，都可以外包出去</p>
+                                <p data-animation="animated fadeInLeft">在这里，你的任何技能，都可以换成钱</p>
+                                <%= link_to("发布工作", jobs_path, class:"btn btn-default") %>
+                                <%= link_to("应聘工作", jobs_path, class:"btn btn-primary") %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+                <!-- Second Slide -->
+                <div class="item">
+
+                    <!-- Slide Background -->
+                    <img src="/images/second.jpg" alt="奇妙工作网"  class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+                    <!-- Slide Text Layer -->
+                    <div class="slide-text slide_style_center">
+                        <h1 data-animation="animated flipInX">奇妙工作网</h1>
+                        <p data-animation="animated lightSpeedIn">不想干、干不好、没空干的活，统统扔出来！</p>
+                        <p data-animation="animated lightSpeedIn">上万名达人，妥妥帮你解决！</p>
+                        <!-- <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">发布工作</a> -->
+                        <!-- <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">浏览达人</a> -->
+                        <%= link_to("发布工作", jobs_path, class:"btn btn-default") %>
+                        <%= link_to("浏览达人", jobs_path, class:"btn btn-primary") %>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+                <!-- Third Slide -->
+                <div class="item">
+
+                    <!-- Slide Background -->
+                    <img src="/images/third.jpg" alt="奇妙工作网"  class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+                    <!-- Slide Text Layer -->
+                    <div class="slide-text slide_style_right">
+                        <h1 data-animation="animated zoomInLeft">奇妙工作网</h1>
+                        <p data-animation="animated fadeInRight">那么多工作，需要你的技能</p>
+                        <p data-animation="animated fadeInRight">付出时间、付出技能、我们帮你变成钱</p>
+                        <%= link_to("浏览工作", jobs_path, class:"btn btn-default") %>
+                        <%= link_to("应聘工作", jobs_path, class:"btn btn-primary") %>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+
+            </div><!-- End of Wrapper For Slides -->
+
+            <!-- Left Control -->
+            <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <!-- Right Control -->
+            <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div> <!-- End  bootstrap-touch-slider Slider -->
+
+        <section id="company">
+        <div style="text-align: center;margin-top: 100px;">
+          <h3>一呼百应，为您打造全球生活服务平台</h2>
+          <h4>同城、异地、洗衣、做菜、代买、代办，只要想得到，我们就帮您办得到</h4>
         </div>
-      </div>
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://y.photo.qq.com/img?s=9yBkCQVj7&l=y.jpg" alt="bid" class = "img-thhumbnail">
-          <div class="caption">
-            <h3>info@18koffer.com</h3>
-          </div>
+        <div style="text-align: center;margin-top: 50px;">
+          <h3>海量工作，为您打造全球工作服务平台</h3>
+          <h4>衣、食、住、行、玩，只要您有一技之长，我们帮您变现，提供更多谋生可能</h4>
         </div>
-      </div>
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://y.photo.qq.com/img?s=bAQJ8dfF4&l=y.jpg" alt="heart" class = "img-thhumbnail">
-          <div class="caption">
-            <h3>010-12344321</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="container"  style="margin-top: -30px;">
+	         <div class="row">
+              <div class="col-md-4 col-md-offset-4">
+                  <div class="material-button-anim">
+                      <div style="text-align: center; margin-bottom:20px">
+                        <ul class="list-inline" id="options">
+                            <li class="option">
+                                <button class="material-button option1" type="button">
+                                    <span class="fa fa-phone" aria-hidden="true"></span>
+                                </button>
+                            </li>
+                            <li class="option">
+                              <button class="material-button option2" type="button">
+                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                              </button>
+                            </li>
+                            <li class="option">
+                              <button class="material-button option3" type="button">
+                                <span class="fa fa-pencil" aria-hidden="true"></span>
+                              </button>
+                            </li>
+                          </ul>
+                            <button class="material-button material-button-toggle" type="button">
+                                <span class="fa fa-plus" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+	                   </div>
+                   </div>
+
+               </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+
+    $('#bootstrap-touch-slider').bsTouchSlider();
+
+    </script>
+
+   <script>
+    $(document).ready(function () {
+    $('.material-button-toggle').click(function () {
+        $(this).toggleClass('open');
+        $('.option').toggleClass('scale-on');
+    });
+   });
+  </script>
+
+</body>
+
+</html>
