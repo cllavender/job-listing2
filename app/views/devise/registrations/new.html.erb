@@ -18,116 +18,52 @@
 	</head>
 
   <body background="/images/bk.png">
-		<!-- <div class="container" background="/images/second.png">
-			<div class="row main">
-				<div class="main-login main-center">
-				<h5>马上注册</h5>
-        <h5>发起召唤 || 响应召唤</h5>
-					<form class="" method="post" action="#">
-            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= f.error_notification %>
 
-						<div class="form-group">
-							<label for="name" class="cols-sm-2 control-label">Your Name</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<%= f.input :email, required: true, autofocus: true %>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="email" class="cols-sm-2 control-label">Your Email</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                  <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="username" class="cols-sm-2 control-label">Username</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<%= f.input :password_confirmation, required: true %>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-actions">
-              <%= f.button :submit, "Sign up" %>
-            </div>
-          <% end %>
-          <%= render "devise/shared/links" %>
-
-					</form>
-				</div>
-			</div>
-		</div> -->
     <div class="container">
     <div class="row main">
       <div class="main-login main-center">
-      <h5>Sign up once and watch any of our free demos.</h5>
-        <form class="" method="post" action="#">
+      <br>
+      <!-- <h2>Log in</h2>
 
-          <div class="form-group">
-            <label for="name" class="cols-sm-2 control-label">Your Name</label>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email, required: false, autofocus: true %>
+    <%= f.input :password, required: false %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Log in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %> -->
+      <h4>光速注册，立即使用</h4>
+      <br>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+          <%= f.error_notification %>
+          <div class="form-inputs">
+
             <div class="cols-sm-10">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
-              </div>
+                <%= f.input :email, required: true, autofocus: true %>
+            </div>
+
+            <div class="cols-sm-10">
+                <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            </div>
+
+            <div class="cols-sm-10">
+                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="email" class="cols-sm-2 control-label">Your Email</label>
-            <div class="cols-sm-10">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
-              </div>
-            </div>
+          <div class="form-actions">
+            <%= f.button :submit, "注册" %>
           </div>
-
-          <div class="form-group">
-            <label for="username" class="cols-sm-2 control-label">Username</label>
-            <div class="cols-sm-10">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="password" class="cols-sm-2 control-label">Password</label>
-            <div class="cols-sm-10">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-            <div class="cols-sm-10">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group ">
-            <a href="http://deepak646.blogspot.in" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
-          </div>
-
-        </form>
+          <% end %>
+          <br>
+          <%= render "devise/shared/links" %>
       </div>
     </div>
   </div>
