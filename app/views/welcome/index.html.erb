@@ -58,8 +58,8 @@
                                 <h1 data-animation="animated zoomInRight">奇妙工作网</h1>
                                 <p data-animation="animated fadeInLeft">在这里，所有不想做的事情，都可以外包出去</p>
                                 <p data-animation="animated fadeInLeft">在这里，你的任何技能，都可以换成钱</p>
-                                <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">发布工作</a>
-                                <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInRight">应聘工作</a>
+                                <%= link_to("发布工作", jobs_path, class:"btn btn-default") %>
+                                <%= link_to("应聘工作", jobs_path, class:"btn btn-primary") %>
                             </div>
                         </div>
                     </div>
@@ -77,8 +77,10 @@
                         <h1 data-animation="animated flipInX">奇妙工作网</h1>
                         <p data-animation="animated lightSpeedIn">不想干、干不好、没空干的活，统统扔出来！</p>
                         <p data-animation="animated lightSpeedIn">上万名达人，妥妥帮你解决！</p>
-                        <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">发布工作</a>
-                        <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">浏览达人</a>
+                        <!-- <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">发布工作</a> -->
+                        <!-- <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">浏览达人</a> -->
+                        <%= link_to("发布工作", jobs_path, class:"btn btn-default") %>
+                        <%= link_to("浏览达人", jobs_path, class:"btn btn-primary") %>
                     </div>
                 </div>
                 <!-- End of Slide -->
@@ -94,8 +96,8 @@
                         <h1 data-animation="animated zoomInLeft">奇妙工作网</h1>
                         <p data-animation="animated fadeInRight">那么多工作，需要你的技能</p>
                         <p data-animation="animated fadeInRight">付出时间、付出技能、我们帮你变成钱</p>
-                        <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">浏览工作</a>
-                        <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-primary" data-animation="animated fadeInRight">应聘工作</a>
+                        <%= link_to("浏览工作", jobs_path, class:"btn btn-default") %>
+                        <%= link_to("应聘工作", jobs_path, class:"btn btn-primary") %>
                     </div>
                 </div>
                 <!-- End of Slide -->
