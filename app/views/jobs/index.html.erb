@@ -18,10 +18,12 @@
     </ul>
 </div>
 
-<table class="table table-boldered">
+<!-- <table class="table table-boldered"> -->
+<table class="table table-boldered table-striped custab" >
   <thead>
     <tr>
       <td>职缺</td>
+      <!-- <td>热门</td> -->
       <td>薪资下限</td>
       <td>薪资上限</td>
       <td>刊登时间</td>
@@ -33,6 +35,9 @@
     <td>
       <%= link_to(job.title, job_path(job)) %>
     </td>
+    <!-- <td>
+     <i class="fa fa-fire"></i>
+   </td> -->
     <td><%= job.wage_lower_bound %>
     </td>
     <td><%= job.wage_upper_bound %>
@@ -42,5 +47,6 @@
     </td>
   </tr>
   <% end %>
+
 </tbody>
 </table>
