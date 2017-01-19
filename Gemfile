@@ -1,5 +1,5 @@
 #source 'https://rubygems.org'
-source 'https://gems.ruby-china.org'
+source 'http://gems.ruby-china.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -35,7 +35,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+ 
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
