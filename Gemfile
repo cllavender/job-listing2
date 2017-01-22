@@ -34,7 +34,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-#gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
+
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 gem 'bootstrap-sass'
 gem 'simple_form'
@@ -50,7 +53,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  #gem 'sqlite3'
 
 end
 
@@ -66,6 +69,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-group :production do
-  gem 'pg'
-end 
+# group :production do
+#   gem 'pg'
+# end
