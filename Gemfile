@@ -48,6 +48,10 @@ gem 'carrierwave'
 #gem 'awesome_print', require:"ap"
 gem 'awesome_rails_console'
 
+#add search bar
+gem 'ransack'
+gem "will_paginate"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
