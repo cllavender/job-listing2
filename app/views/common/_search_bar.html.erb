@@ -3,7 +3,7 @@
    <div class="form-group">
       <%= form_tag search_jobs_path, method: :get, class: 'questions-search-form'  do %>\
         <div class="input-group input-group-lg">
-          <input type="text" class="form-control" name="query_string" value="<%= params[:query_string] %>" placeholder="职位...">
+          <input type="text" class="form-control" name="query_string" value="<%= params[:query_string] %>" placeholder="工作、坐标、种类...">
           <span class="input-group-btn">
             <button type="submit" class="btn btn-danger">
               <span class="fa fa-search"></span>
