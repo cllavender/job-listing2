@@ -1,8 +1,5 @@
 <div class="col-md-8 col-lg-offset-2">
-           <%= render "common/search_bar" %>
-           <br>
-
-      <div class="item_div">
+          <div class="item_div">
         <table class="table table-borderd">
           <%= render :partial => "jobs/item", :collection => @jobs, :as => :job %>
         </table>
