@@ -61,7 +61,7 @@ class JobsController < ApplicationController
     # search_result = Job.ransack(@search_criteria).result(distinct: true)
     search_result = Job.ransack({:title_cont => @query_string}).result(distinct: true)
     # search_result = Job.ransack({{:title_or_field_or_location_or_company_name_cont => @q}}).result(distinct: true)
-    @jobs = search_result.paginate(page: params[:page], per_page:2)
+    @jobs = search_result.paginate(page: params[:page], per_page:10)
     end
   end
 
