@@ -1,10 +1,48 @@
-<h3> 投交履历到 <%= @job.title %> </h3>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<hr>
 
+		<!-- Website CSS style -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style.css">
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+		<title>Edit</title>
+	</head>
+
+  <!-- <body background="/images/bk.png"> -->
+<body>
+    <div class="container">
+    <div class="row main">
+      <div class="main-left">
+      <h3> 递交申请到 <%= @job.title %> </h3>
+<br>
+<br>
 <%= simple_form_for [@job, @resume] do |f| %>
-  <%= f.input :content %>
-  <%= f.input :attachment %>
-  
-  <%= f.submit "送出" %>
+  <div class="cols-sm-10">
+      <%= f.input :content, :label => "简短申请", required: true %>
+  </div>
+  <div class="cols-sm-10">
+      <%= f.input :attachment, :label => "附加文件" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "送出" %>
+  </div>
+
 <% end %>
+</div>
+</div>
+</div>
+
+
+
+</body>
+</html>
