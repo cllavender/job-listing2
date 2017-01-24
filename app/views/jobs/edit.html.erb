@@ -1,17 +1,75 @@
-<h1> Eidt a job </h1>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<%= simple_form_for @job do |f| %>
 
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :city, :label => "城市"%>
-<%= f.input :location, :label => "区域"%>
-<%= f.input :field, :label => "种类"%>
-<%= f.input :require_time, :label => "需要时间"%>
-<%= f.input :wage_lower_bound, :label => "薪资下限" %>
-<%= f.input :wage_upper_bound, :label => "薪资上限" %>
-<%= f.input :contact_email %>
-<%= f.input :is_hidden %>
+		<!-- Website CSS style -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
 
-  <%= f.submit "Submit" %>
-<% end %>
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style.css">
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+		<title>Edit</title>
+	</head>
+
+  <!-- <body background="/images/bk.png"> -->
+
+    <div class="container">
+    <div class="row main">
+      <div class="main-left">
+      <h1> 编辑工作</h1>
+      <br>
+      <br>
+          <%= simple_form_for @job do |f| %>
+          <%= f.error_notification %>
+          <div class="form-inputs">
+            <div class="cols-sm-10">
+                <%= f.input :title, required: true, autofocus: true %>
+            </div>
+            <div class="cols-sm-10">
+                <%= f.input :description %>
+            </div>
+            <div class="cols-sm-10">
+                <%= f.input :city, :label=> "城市", required: true %>
+            </div>
+            <div class="cols-sm-10">
+                <%= f.input :location, :label => "区域", required: true %>
+            </div>
+            <div class="cols-sm-10">
+                <%= f.input :field, :label => "种类", required: true %>
+            </div>
+            <div class="cols-sm-10">
+                <%= f.input :require_time, :label => "需要时间", required: true %>
+            </div>
+            <div class="cols-sm-10">
+                <%= f.input :wage_lower_bound, :label => "薪资下限", required: true %>
+            </div>
+            <div class="cols-sm-10">
+                <%= f.input :wage_upper_bound, :label => "薪资上限", required: true %>
+            </div>
+            <div class="cols-sm-10">
+                <%= f.input  :contact_email, :label => "联系邮箱", required: true %>
+            </div>
+            <div class="cols-sm-10">
+                <%= f.input :is_hidden, as: :boolean  %>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "提交" %>
+          </div>
+          <% end %>
+
+      </div>
+      </div>
+      </div>
+
+
+    
+      </body>
+      </html>
