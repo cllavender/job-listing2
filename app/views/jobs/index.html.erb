@@ -77,6 +77,13 @@
 </table>
 </div>
 
-<div class="text-center">
+<div class="form-group">
+<div class="pull-right">
+  <%= link_to("Add a job", new_job_path, :class => "btn btn-info" ) %>
+</div>
+
+<div class="text-center" >
     <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+</div>
+
 </div>
