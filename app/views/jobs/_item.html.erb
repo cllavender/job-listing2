@@ -1,7 +1,23 @@
 <tr>
-    <td width="80%">
-      <%= job.title %>
-      <%= job.description %>
+    <td >
+     <%= link_to(job.title, job_path(job)) %>
+   </td>
+     <%= link_to(job.field, job_path(job)) %>
     </td>
-    <td> <%= job.created_at.to_s(:short) %> </td>
+    <td>
+     <%= link_to(job.city, job_path(job)) %>
+    </td>
+    <td>
+     <%= link_to(job.location, job_path(job)) %>
+    </td>
+    <td><%= job.wage_lower_bound %>
+    </td>
+    <td><%= job.wage_upper_bound %>
+    </td>
+    <td>
+      <%= job.require_time %>
+    </td>
+    <td>
+      <%= job.created_at.to_s(:short) %>
+    </td>
   </tr>
