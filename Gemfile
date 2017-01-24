@@ -44,6 +44,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'carrierwave'
+gem 'local_time'
 
 
 #gem 'awesome_print', require:"ap"
