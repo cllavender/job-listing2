@@ -9,8 +9,10 @@ class JobsController < ApplicationController
       Job.published.order('wage_lower_bound DESC').paginate(page: params[:page], per_page:10)
     when 'by_upper_bound'
       Job.published.order('wage_upper_bound DESC').paginate(page: params[:page], per_page:10)
+    when 'by_require_time'
+      Job.published.order('require_time DESC').paginate(page: params[:page], per_page:10)
     else
-      Job.published.recent.paginate(page: params[:page], per_page:5)
+      Job.published.recent.paginate(page: params[:page], per_page:10)
     end
   end
 
@@ -61,9 +63,9 @@ class JobsController < ApplicationController
         # search_result = Job.ransack(@search_criteria).result(distinct: true)
         search_result = Job.ransack({:title_or_city_or_location_or_field_cont => @query_string}).result(distinct: true)
         # search_result = Job.ransack({{:title_or_field_or_location_or_company_name_cont => @q}}).result(distinct: true)
-        @jobs = search_result.paginate(page: params[:page], per_page:10)
+        @jobs = search_result.recent.paginate(page: params[:page], per_page:5)
       else
-        @jobs = Job.all.recent.paginate(page: params[:page], per_page:10)
+        @jobs = Job.all.recent.paginate(page: params[:page], per_page:5)
       end
   end
 
