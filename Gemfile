@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
-gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+# gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 gem 'bootstrap-sass'
 gem 'simple_form'

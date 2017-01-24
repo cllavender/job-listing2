@@ -1,30 +1,28 @@
 <div class="pull-right">
   <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default" ) %>
 </div>
+<br>
+<br>
+
+<div class="btn-group pull-right" role="group" aria-label="...">
+     <%= link_to("按薪资下限排序", admin_jobs_path(:order => "by_lower_bound"), :class => "btn btn-default") %>
+     <%= link_to("按薪资上限排序", admin_jobs_path(:order => "by_upper_bound"), :class => "btn btn-default") %>
+     <%= link_to("按需求时间排序", admin_jobs_path(:order => "by_require_time"), :class => "btn btn-default") %>
+     <%= link_to("按发表时间排序", admin_jobs_path, :class => "btn btn-default") %>
+</div>
+<div class="item_div">
 <table class="table table-boldered table-striped custab" ><thead>
         <tr>
-           <td>
-               状态
-           </td>
-            <td>
-                职缺
-            </td>
-
-            <td>
-              收到履历数量
-            </td>
-            <td>
-                薪资下限
-            </td>
-            <td>
-                薪资上限
-            </td>
-            <td>
-                管理选项
-            </td>
-            <td>
-                刊登时间
-            </td>
+           <td>状态</td>
+           <td>需求</td>
+           <td>收到履历数量</td>
+           <td>种类</td>
+           <td>城市</td>
+           <td>区域</td>
+           <td>薪资范围</td>
+           <td>管理选项</td>
+           <td>需求时间</td>
+           <td>刊登时间</td>
         </tr>
     </thead>
 
@@ -37,8 +35,21 @@
       <%= link_to(job.title,  admin_job_path(job)) %>
     </td>
     <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
-    <td> <%= job.wage_lower_bound %> </td>
-    <td> <%= job.wage_upper_bound %> </td>
+    <td>
+     <%= link_to(job.field, job_path(job)) %>
+    </td>
+    <td>
+     <%= link_to(job.city, job_path(job)) %>
+    </td>
+    <td>
+     <%= link_to(job.location, job_path(job)) %>
+    </td>
+    <td width="10%">
+     <span class="label label-info">
+      <span class="fa fa-rmb"></span>
+      <%= job.wage_lower_bound%> - <%= job.wage_upper_bound%> 元
+    </span>
+    </td>
     <td>
      <!-- <%= link_to("Edit", edit_admin_job_path(job)) %> | -->
      <%= link_to edit_admin_job_path(job), class: "btn btn-xs btn-info" do %><i class="fa fa-pencil"></i><% end %>
@@ -49,9 +60,17 @@
    <%= link_to hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-warning" do %><i class="fa fa-eye-slash"></i><% end %>
    <% end %>
    </td>
-    <td>
-      <%= job.created_at %>
-    </td>
+   <td width="10%">
+     <%= local_time(job.require_time, '%B %e, %Y') %>
+   </td>
+   <td width="10%">
+     <%= local_time(job.created_at, '%B %e, %Y') %>
+   </td>
   </tr>
   <% end %>
 </table>
+</div>
+
+<div class="text-center">
+    <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+</div>

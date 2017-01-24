@@ -42,6 +42,16 @@ create_jos = for i in 1..3 do
 end
 puts "3 Public jobs created."
 
+create_jos = for i in 1..3 do
+  Job.create!([title: "帮忙遛狗", description:"拉普拉多狗狗 2岁", wage_upper_bound: rand(3..10)*10, wage_lower_bound: rand(1..3)*10, is_hidden: "true", city:"北京", location:"朝阳区", field: "其它",  require_time:DateTime.parse("02/05/2017 18:00")])
+end
+puts "3 Public jobs created."
+
+create_jos = for i in 1..5 do
+  Job.create!([title: "帮忙买生煎", description:"拉普拉多狗狗 2岁", wage_upper_bound: rand(3..10)*10, wage_lower_bound: rand(1..3)*10, is_hidden: "false", city:"上海", location:"浦东区", field: "跑腿",  require_time:DateTime.parse("06/02/2017 8:00")])
+end
+puts "5 Public jobs created."
+
 create_jos = for i in 1..2 do
   Job.create!([title: "上门烧菜",
     description:"家宴，20菜，10荤10素2汤2甜品",
@@ -57,6 +67,11 @@ end
 puts "3 Public jobs created."
 
 create_jos = for i in 1..10 do
-  Job.create!([title: "洗衣服", description: "洗衣服、烘干、熨衣服、叠整齐", wage_upper_bound: rand(5..20)*10, wage_lower_bound: rand(2..4)*10,is_hidden: "true",city:"上海", location:"静安区", field: "衣",  require_time:DateTime.parse("02/05/2017 20:00")])
+  Job.create!([title: "洗衣服", description: "洗衣服、烘干、熨衣服、叠整齐", wage_upper_bound: rand(5..20)*10, wage_lower_bound: rand(2..4)*10,is_hidden: "false",city:"上海", location:"静安区", field: "衣",  require_time:DateTime.parse("02/05/2017 20:00")])
+end
+puts "10 Hidden jobs created."
+
+create_jos = for i in 1..10 do
+  Job.create!([title: "代理男友", description: "回家过年，见父母，同城", wage_upper_bound: rand(5..20)*10, wage_lower_bound: rand(2..4)*10,is_hidden: "false",city:"成都", location:"武侯区", field: "其它",  require_time:DateTime.parse("27/01/2017 9:00")])
 end
 puts "10 Hidden jobs created."
