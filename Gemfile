@@ -45,12 +45,13 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'carrierwave'
 
+
 #gem 'awesome_print', require:"ap"
 gem 'awesome_rails_console'
 
 #add search bar
 gem 'ransack'
-gem "will_paginate"
+gem 'will_paginate-bootstrap'
 
 
 group :development, :test do
