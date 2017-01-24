@@ -57,12 +57,14 @@ class JobsController < ApplicationController
   end
 
   def search
-    if @query_string.present?
-    # search_result = Job.ransack(@search_criteria).result(distinct: true)
-    search_result = Job.ransack({:title_or_city_or_location_or_field_cont => @query_string}).result(distinct: true)
-    # search_result = Job.ransack({{:title_or_field_or_location_or_company_name_cont => @q}}).result(distinct: true)
-    @jobs = search_result.paginate(page: params[:page], per_page:10)
-    end
+      if @query_string.present?
+        # search_result = Job.ransack(@search_criteria).result(distinct: true)
+        search_result = Job.ransack({:title_or_city_or_location_or_field_cont => @query_string}).result(distinct: true)
+        # search_result = Job.ransack({{:title_or_field_or_location_or_company_name_cont => @q}}).result(distinct: true)
+        @jobs = search_result.paginate(page: params[:page], per_page:10)
+      else
+        @jobs = Job.all.recent.paginate(page: params[:page], per_page:10)
+      end
   end
 
 
