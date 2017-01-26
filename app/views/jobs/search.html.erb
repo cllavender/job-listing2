@@ -1,11 +1,17 @@
 <br>
 <br>
-<div class="btn-group pull-right" role="group" aria-label="...">
+<div class="form-group">
+<div class="btn-group pull-left" role="group" aria-label="...">
      <%= link_to("按薪资下限排序", search_jobs_path(:order => "by_lower_bound", :query_string => @query), :class => "btn btn-default") %>
      <%= link_to("按薪资上限排序", search_jobs_path(:order => "by_upper_bound", :query_string => @query), :class => "btn btn-default") %>
      <%= link_to("按需求时间排序", search_jobs_path(:order => "by_require_time", :query_string => @query), :class => "btn btn-default") %>
      <%= link_to("按发表时间排序", search_jobs_path(:order => "by_require_time", :query_string => @query), :class => "btn btn-default") %>
 </div>
+<div class="pull-right">
+  <%= link_to("Add a job", new_job_path, :class => "btn btn-info" ) %>
+</div>
+</div>
+
 
 <div class="item_div">
         <table class="table table-boldered table-striped custab" >
@@ -24,16 +30,8 @@
           <%= render :partial => "jobs/item", :collection => @jobs, :as => :job %>
           </tbody>
         </table>
-
-        <div class="form-group">
-        <div class="pull-right">
-          <%= link_to("Add a job", new_job_path, :class => "btn btn-info" ) %>
-        </div>
+</div>
 
         <div class="text-center" >
             <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
         </div>
-
-        </div>
-
-</div>
